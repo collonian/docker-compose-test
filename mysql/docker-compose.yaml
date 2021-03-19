@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  article_db:
+    image: mysql
+    expose: 
+      - 3306
+    networks:
+      - network
+
+
+networks:
+  network:
