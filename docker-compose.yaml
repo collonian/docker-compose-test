@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+
+  proxy:
+    image: nginx:stable-alpine
+    ports:
+      - 80:80
+    networks:
+      - frontend
+      - backend
+    volumes:
+      - ./proxy/nginx.conf:/etc/nginx/conf.d/default.conf
+    depends_on: 
+      - frontend
+      - backend
+
+  frontend:
+    image: realworld_frontend:${TAG:-latest}
+    expose:
+      - 80
+    networks:
+      - frontend
+
+  backend:
+    image: realworld_backend:${TAG:-latest}
+    expose: 
+      - 8080
+    networks:
+      - backend
+      - mysql_network
+      
+
+networks: 
+  frontend:
+  backend:
+  mysql_network:
+    external: true

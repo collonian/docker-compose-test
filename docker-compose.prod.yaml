@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+
+  frontend:
+    environment: 
+      - NODE_ENV=production
+  backend:
+    environment:
+      - SPRING_PROFILES_ACTIVE=prod

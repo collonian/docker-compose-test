@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - 3000:80
+
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - 5005:5005
+      - 8080:8080
+    environment: 
+      - JAVA_OPTS=-agentlib:jdwp=transport=dt_socket,address=5005,server=y,suspend=n
+      - SPRING_PROFILES_ACTIVE=dev
