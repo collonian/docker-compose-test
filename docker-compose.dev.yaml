@@ -9,6 +9,8 @@ services:
   backend:
     build:
       context: ./backend
+    ports:
+      - 5005:5005
     environment: 
       - JAVA_OPTS=-agentlib:jdwp=transport=dt_socket,address=5005,server=y,suspend=n
       - SPRING_PROFILES_ACTIVE=dev

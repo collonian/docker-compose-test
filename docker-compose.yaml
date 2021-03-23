@@ -25,7 +25,6 @@ services:
   backend:
     image: realworld_backend:${TAG:-latest}
     ports:
-      - 5005:5005
       - 8080:8080
     networks:
       - backend
