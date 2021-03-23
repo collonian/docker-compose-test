@@ -61,4 +61,4 @@ docker-compose.yaml 파일에는 2개의 서비스(`frontend`, `backend`)가 설
 ## etc.
 * Docker Image 빌드에서 사용되는 TAG는 `.env`에 기록되어 있다.
 * Database에 대한 설정은 `./mysql/.env`에 기록되어 있다.
-* Database에 대한 접근 설정은 `.env`에 기록되어 있다.
+* Database에 대한 접속 설정은 `.env`에 기록되어 있다.
